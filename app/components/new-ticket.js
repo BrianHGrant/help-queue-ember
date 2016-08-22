@@ -12,7 +12,8 @@ export default Ember.Component.extend({
       var params = {
         name: this.get('name'),
         location: this.get('location'),
-        description: this.get('description')
+        description: this.get('description'),
+        status: true
       };
       this.set('questionCount', 4);
       this.sendAction('saveTicket', params);

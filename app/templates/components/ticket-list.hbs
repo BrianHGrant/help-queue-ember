@@ -1,0 +1,5 @@
+<ul>
+  {{#each tickets as |ticket|}}
+    <li>{{#link-to 'ticket' ticket.id}}{{ticket.name}} at {{ticket.location}}{{/link-to}}</li>
+  {{/each}}
+</ul>
