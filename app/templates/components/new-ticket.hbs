@@ -1,0 +1,17 @@
+<form>
+  <div>
+    <label for="name">Pair Name</label>
+    {{input value=name id="name"}}
+  </div>
+
+  <div>
+    <label for="location">Location</label>
+    {{input value=location id="location"}}
+  </div>
+
+  <div>
+    <label for="description">Description</label>
+    {{textarea value=description id="description"}}
+  </div>
+  <button {{action 'saveTicket'}}>Help!</button>
+</form>
