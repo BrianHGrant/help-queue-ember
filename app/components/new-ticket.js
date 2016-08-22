@@ -1,21 +1,26 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  questionCount: 0,
-
+  question1: true,
+  question2: false,
+  question3: false,
+  question4: false,
+  question5: false,
   actions: {
-    questionProgress() {
-      this.questionCount ++;
+    nextQuestion(index) {
+      this.set('question' + index, false);
+      this.set('question' + (index + 1), true);
     },
 
-    saveTicket() {
+    saveTicket(index) {
       var params = {
         name: this.get('name'),
         location: this.get('location'),
         description: this.get('description'),
         status: true
       };
-      this.set('questionCount', 4);
+      this.set('question' + index, false);
+      this.set('question' + (index + 1), true);
       this.sendAction('saveTicket', params);
     }
   }
