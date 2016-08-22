@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import moment from 'moment';
 
 export default Ember.Component.extend({
   question1: true,
@@ -17,7 +18,8 @@ export default Ember.Component.extend({
         name: this.get('name'),
         location: this.get('location'),
         description: this.get('description'),
-        status: true
+        status: true,
+        timeOpen: moment(new Date()).unix()
       };
       this.set('question' + index, false);
       this.set('question' + (index + 1), true);
